@@ -20,6 +20,9 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 "================
 " Color schemes
 let g:solarized_termcolors=256
+"let g:solarized_termtrans=1
+let g:solarized_contrast="high"
+let g:solarized_visibility="high"
 colorscheme solarized
 set background=dark
 "================
@@ -30,7 +33,7 @@ set encoding=utf8
 set ffs=unix,dos,mac
 set ai
 set number
-set modeline 
+set modeline
 set ruler
 set showmatch
 set incsearch
@@ -55,7 +58,7 @@ map <C-C> :NERDTreeToggle<CR>
 set list
 set listchars=tab:>-,trail:¶
 
-"hi CursorLine term=none cterm=none ctermbg=3  
+"hi CursorLine term=none cterm=none ctermbg=3
 
 filetype plugin on
 filetype indent on
