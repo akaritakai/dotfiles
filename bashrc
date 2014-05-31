@@ -3,9 +3,9 @@
 # for examples
 
 alias mpc="mpc -f '[[%artist% - ]%title%][ (on %album%)]|[%file%]'"
-shopt -s globstar                                                  
+shopt -s globstar
 alias memusage="ps -o comm,rss,vsz | grep $1"
-alias :q=exit                                                      
+alias :q=exit
 alias fucking=sudo
 set completion-prefix-display-length 2
 function spider4chan() { wget -P pics -H -nd -r -Dimages.4chan.org -A '.jpg,.jpeg,.png,.gif,.html,.mhtml' -erobots=off "$1"; }
