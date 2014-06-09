@@ -37,15 +37,4 @@ if [ -f /home/rylai/code/hub/etc/hub.bash_completion.sh ]; then
 	. /home/rylai/code/hub/etc/hub.bash_completion.sh
 fi
 
-# Check to see if SSH agent is already running
-agent_pid="$(ps -ef | grep "$USER.*ssh-agent" | grep -v "grep" | awk '{print($2)}' | head -n1 | cut -d' ' -f1)"
-
-# start if not running
-if [[ -z "$agent_pid" ]]; then
-	eval "$(ssh-agent)"
-else # agent is already running
-	agent_ppid="$(($agent_pid - 1))"
-	agent_sock="$(find /tmp -path "*ssh*" -type s -iname "agent.$agent_ppid" 2>/dev/null)"
-	export SSH_AGENT_PID="$agent_pid"
-	export SSH_AUTH_SOCK="$agent_sock"
-fi
+eval `keychain --eval --agents ssh id_rsa`
