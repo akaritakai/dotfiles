@@ -21,7 +21,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 " Color schemes
 let g:solarized_termcolors=256
 "let g:solarized_termtrans=1
-let g:solarized_contrast="high"
+"let g:solarized_contrast="high"
 "let g:solarized_visibility="high"
 colorscheme solarized
 set background=dark
