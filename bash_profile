@@ -37,4 +37,4 @@ if [ -f /home/rylai/code/hub/etc/hub.bash_completion.sh ]; then
 	. /home/rylai/code/hub/etc/hub.bash_completion.sh
 fi
 
-eval `keychain --eval --agents ssh id_rsa`
+eval `keychain --eval --quiet --quick --agents ssh id_rsa`
