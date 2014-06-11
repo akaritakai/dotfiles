@@ -12,3 +12,5 @@
 [alias]
 	co = checkout
 	initial = commit -am 'initial commit'
+[push]
+	default = simple
