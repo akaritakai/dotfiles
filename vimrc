@@ -27,6 +27,9 @@ call vundle#end()
 filetype on
 "Airline
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+set noshowmode
+let g:airline_theme='solarized'
 "Syntastic
 let g:syntastic_always_populate_loc_list=1
 " CtrlP.vim
