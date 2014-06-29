@@ -1,7 +1,5 @@
 set nocompatible
 set t_Co=256
-" Powerline config.
-set rtp+=/home/rylai/code/powerline/powerline/bindings/vim
 set laststatus=2
 set fillchars+=stl:\ ,stlnc:\
 "=================
@@ -24,8 +22,11 @@ Plugin 'tpope/vim-commentary'
 Plugin 'lepture/vim-jinja'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
+Plugin 'bling/vim-airline'
 call vundle#end()
 filetype on
+"Airline
+let g:airline_powerline_fonts = 1
 "Syntastic
 let g:syntastic_always_populate_loc_list=1
 " CtrlP.vim
