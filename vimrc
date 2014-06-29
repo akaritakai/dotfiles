@@ -6,13 +6,26 @@ set laststatus=2
 set fillchars+=stl:\ ,stlnc:\
 "=================
 " Vundle config
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'taglist.vim'
-Bundle 'terryma/vim-multiple-cursors'
-" Pathogen
-execute pathogen#infect()
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-scripts/taglist.vim'
+Plugin 'tpope/vim-bundler'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tpope/vim-endwise'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'Raimondi/delimitMate'
+Plugin 'tpope/vim-commentary'
+Plugin 'lepture/vim-jinja'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-surround'
+call vundle#end()
+filetype on
 "Syntastic
 let g:syntastic_always_populate_loc_list=1
 " CtrlP.vim
