@@ -23,6 +23,7 @@ Plugin 'lepture/vim-jinja'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
 Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-dispatch'
 call vundle#end()
 filetype on
 "Airline
