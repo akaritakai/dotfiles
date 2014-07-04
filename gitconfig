@@ -1,6 +1,7 @@
 [user]
 	email = rylee@rylee.me
 	name = Rylee Fowler
+	signingkey = F637E333
 [credential]
 	helper = cache --timeout 3600
 [core]
