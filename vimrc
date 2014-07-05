@@ -24,6 +24,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-fugitive'
 call vundle#end()
 filetype on
 "Airline
