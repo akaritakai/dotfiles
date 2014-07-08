@@ -25,6 +25,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-fugitive'
+Plugin 'kien/rainbow_parentheses.vim'
 call vundle#end()
 filetype on
 "Airline
@@ -38,6 +39,13 @@ let g:syntastic_always_populate_loc_list=1
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:delimitMate_expand_cr=2
 let g:delimitMate_expand_space=1
+"Rainbow Parentheses
+au VimEnter * RainbowParenthesesToggle
+au VimEnter * RainbowParenthesesLoadRound
+au VimEnter * RainbowParenthesesLoadSquare
+au VimEnter * RainbowParenthesesLoadBraces
+au VimEnter * RainbowParenthesesLoadChevrons
+
 "================
 " Color schemes
 let g:solarized_termcolors=256
