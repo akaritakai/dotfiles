@@ -102,6 +102,12 @@ autocmd FileType ruby set expandtab
 autocmd FileType ruby set softtabstop=2
 autocmd FileType ruby set shiftwidth=2
 
+"Shamelessly stolen from
+"http://stackoverflow.com/questions/14333508/vim-ruby-autocomplete
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+
 autocmd FileType html set tabstop=2
 autocmd FileType html set expandtab
 autocmd FileType html set softtabstop=2
