@@ -37,4 +37,4 @@ if [ -f /home/rylai/code/hub/etc/hub.bash_completion.sh ]; then
 	. /home/rylai/code/hub/etc/hub.bash_completion.sh
 fi
 
-eval `keychain --eval --quiet --quick ~/.ssh/id_rsa 1F637E333`
+eval `keychain --eval --quiet --quick ~/.ssh/id_rsa ~/.ssh/id_rsa.old 1F637E333`
