@@ -11,7 +11,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'tpope/vim-bundler'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'morhetz/gruvbox'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'gmarik/Vundle.vim'
@@ -23,7 +23,7 @@ Plugin 'lepture/vim-jinja'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
 Plugin 'bling/vim-airline'
-Bundle 'chase/vim-ansible-yaml'
+Plugin 'chase/vim-ansible-yaml'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-fugitive'
 Plugin 'kien/rainbow_parentheses.vim'
@@ -33,7 +33,7 @@ filetype on
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 set noshowmode
-let g:airline_theme='solarized'
+let g:airline_theme='base16'
 "Syntastic
 let g:syntastic_always_populate_loc_list=1
 " CtrlP.vim
@@ -49,11 +49,10 @@ au VimEnter * RainbowParenthesesLoadChevrons
 
 "================
 " Color schemes
-let g:solarized_termcolors=256
-"let g:solarized_termtrans=1
-"let g:solarized_contrast="high"
-"let g:solarized_visibility="high"
-colorscheme solarized
+if !has("gui_running")
+  let g:gruvbox_italic=0
+endif
+colorscheme gruvbox
 set background=dark
 "================
 
