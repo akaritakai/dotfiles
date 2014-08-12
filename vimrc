@@ -21,6 +21,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-commentary'
 Plugin 'lepture/vim-jinja'
 Plugin 'tpope/vim-rails'
+Plugin 'nginx.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'bling/vim-airline'
 Plugin 'chase/vim-ansible-yaml'
@@ -106,6 +107,7 @@ autocmd FileType ruby set shiftwidth=2
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
 
 autocmd FileType html set tabstop=2
 autocmd FileType html set expandtab
