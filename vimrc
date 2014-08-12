@@ -88,6 +88,7 @@ map <C-C> :NERDTreeToggle<CR>
 set list
 set listchars=tab:>-,trail:¶
 
+autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
 "hi CursorLine term=none cterm=none ctermbg=3
 
 filetype plugin on
@@ -107,12 +108,15 @@ autocmd FileType ruby set shiftwidth=2
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
 
 autocmd FileType html set tabstop=2
 autocmd FileType html set expandtab
 autocmd FileType html set softtabstop=2
 autocmd FileType html set shiftwidth=2
+autocmd FileType eruby set tabstop=2
+autocmd FileType eruby set expandtab
+autocmd FileType eruby set softtabstop=2
+autocmd FileType eruby set shiftwidth=2
 
 " completion
 let g:EclimCompletionMethod = 'omnifunc'
