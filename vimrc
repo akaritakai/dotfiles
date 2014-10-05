@@ -31,7 +31,6 @@ Plugin 'kien/rainbow_parentheses.vim'
 call vundle#end()
 filetype on
 "Airline
-let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 set noshowmode
 let g:airline_theme='base16'
