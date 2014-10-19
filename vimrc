@@ -67,6 +67,8 @@ set ruler
 set showmatch
 set incsearch
 
+set breakindent
+
 set foldmethod=syntax
 set foldnestmax=2
 
