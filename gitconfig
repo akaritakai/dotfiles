@@ -13,5 +13,9 @@
 [alias]
 	co = checkout
 	initial = commit -am 'initial commit'
+	st = status
+	ps = push
+	pl = pull
+	dif = diff
 [push]
 	default = simple

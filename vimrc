@@ -23,11 +23,17 @@ Plugin 'lepture/vim-jinja'
 Plugin 'tpope/vim-rails'
 Plugin 'nginx.vim'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 Plugin 'bling/vim-airline'
 Plugin 'chase/vim-ansible-yaml'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-fugitive'
 Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'kana/vim-textobj-user'
+Plugin 'tek/vim-textobj-ruby'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'whatyouhide/vim-textobj-xmlattr'
+Plugin 'tpope/vim-abolish'
 call vundle#end()
 filetype on
 "Airline
@@ -38,6 +44,8 @@ let g:airline_theme='base16'
 let g:syntastic_always_populate_loc_list=1
 " CtrlP.vim
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_extensions = ['tag']
+nnoremap <C-S-T> :CtrlPTag<CR>
 let g:delimitMate_expand_cr=2
 let g:delimitMate_expand_space=1
 "Rainbow Parentheses
@@ -47,6 +55,15 @@ au VimEnter * RainbowParenthesesLoadSquare
 au VimEnter * RainbowParenthesesLoadBraces
 au VimEnter * RainbowParenthesesLoadChevrons
 
+"---
+let g:textobj_ruby_inner_branch=0
+
+" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
+vmap <Enter>         <Plug>(EasyAlign)
+vmap <Leader><Enter> <Plug>(LiveEasyAlign)
+" " Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
+nmap <Leader>a <Plug>(EasyAlign)
+
 "================
 " Color schemes
 if !has("gui_running")
@@ -55,6 +72,8 @@ endif
 colorscheme gruvbox
 set background=dark
 "================
+
+set mps+=<:>
 
 set bs=2
 syntax enable
@@ -66,7 +85,7 @@ set modeline
 set ruler
 set showmatch
 set incsearch
-
+set wildmenu
 set breakindent
 
 set foldmethod=syntax
@@ -86,11 +105,19 @@ command Q q
 map <F5> :setlocal spell! spelllang=en_us<CR>
 map <C-C> :NERDTreeToggle<CR>
 
+nnoremap <Leader>h :nohlsearch<CR>
+
 set list
 set listchars=tab:>-,trail:¶
 
+let g:surround_{char2nr('c')} = "<!-- \r -->"
+let g:surround_{char2nr('C')} = "<![CDATA[\r]]>"
+vmap C Sc
+
 autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
 "hi CursorLine term=none cterm=none ctermbg=3
+
+hi Todo ctermbg=1 ctermfg=254
 
 filetype plugin on
 filetype indent on
@@ -110,19 +137,16 @@ autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 
-autocmd FileType html set tabstop=2
-autocmd FileType html set expandtab
-autocmd FileType html set softtabstop=2
-autocmd FileType html set shiftwidth=2
-autocmd FileType eruby set tabstop=2
-autocmd FileType eruby set expandtab
-autocmd FileType eruby set softtabstop=2
-autocmd FileType eruby set shiftwidth=2
+autocmd FileType html,eruby  set tabstop=2
+autocmd FileType html,eruby  set expandtab
+autocmd FileType html,eruby  set softtabstop=2
+autocmd FileType html,eruby  set shiftwidth=2
 
 " completion
 let g:EclimCompletionMethod = 'omnifunc'
 "surround.vim settings!
 let g:surround_{char2nr('=')} = "<%= \r %>"
+let g:surround_{char2nr('#')} = "<%# \r %>"
 let g:surround_{char2nr('-')} = "<% \r %>"
 
 "function! InsertTabWrapper()
