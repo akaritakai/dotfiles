@@ -34,6 +34,7 @@ Plugin 'tek/vim-textobj-ruby'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'whatyouhide/vim-textobj-xmlattr'
 Plugin 'tpope/vim-abolish'
+Plugin 'wting/rust.vim'
 call vundle#end()
 filetype plugin indent on
 "Airline
