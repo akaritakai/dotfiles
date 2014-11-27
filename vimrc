@@ -35,7 +35,7 @@ Plugin 'junegunn/vim-easy-align'
 Plugin 'whatyouhide/vim-textobj-xmlattr'
 Plugin 'tpope/vim-abolish'
 call vundle#end()
-filetype on
+filetype plugin indent on
 "Airline
 let g:airline#extensions#tabline#enabled = 1
 set noshowmode
