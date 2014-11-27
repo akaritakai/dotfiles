@@ -69,7 +69,13 @@ nmap <Leader>a <Plug>(EasyAlign)
 " Color schemes
 if !has("gui_running")
   let g:gruvbox_italic=0
+  let g:gruvbox_termcolors=16
 endif
+if has("gui_running")
+  set guifont=Source_Code_Pro:h12:cANSI
+  set clipboard=unnamed
+endif
+
 colorscheme gruvbox
 set background=dark
 "================
