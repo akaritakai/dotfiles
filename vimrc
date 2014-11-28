@@ -15,7 +15,9 @@ Plugin 'tomasr/molokai'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'gmarik/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
+if !empty(glob('~/.use_ycm'))
+  Plugin 'Valloric/YouCompleteMe'
+endif
 Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-commentary'
@@ -95,7 +97,11 @@ set ruler
 set showmatch
 set incsearch
 set wildmenu
-set breakindent
+set hidden
+
+if exists('&breakindent')
+  set breakindent
+endif
 
 set foldmethod=syntax
 set foldnestmax=2
