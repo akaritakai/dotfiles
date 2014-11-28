@@ -15,7 +15,9 @@ elseif has('win32')
 endif
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'vim-scripts/taglist.vim'
+if executable('ctags')
+  Plugin 'vim-scripts/taglist.vim'
+end
 Plugin 'tpope/vim-bundler'
 Plugin 'tomasr/molokai'
 Plugin 'airblade/vim-gitgutter'
