@@ -5,8 +5,14 @@ set fillchars+=stl:\ ,stlnc:\
 "=================
 " Vundle config
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
+if has('unix')
+  set rtp+=~/.vim/bundle/Vundle.vim/
+  call vundle#begin()
+elseif has('win32')
+  set rtp+=~/vimfiles/bundle/Vundle.vim/
+  let path='~/vimfiles/bundle'
+  call vundle#begin(path)
+endif
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/taglist.vim'
