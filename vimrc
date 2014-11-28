@@ -11,7 +11,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'tpope/vim-bundler'
-Plugin 'morhetz/gruvbox'
+Plugin 'tomasr/molokai'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'gmarik/Vundle.vim'
@@ -70,15 +70,15 @@ nmap <Leader>a <Plug>(EasyAlign)
 "================
 " Color schemes
 if !has("gui_running")
-  let g:gruvbox_italic=0
-  let g:gruvbox_termcolors=16
+  let g:rehash256 = 1
 endif
 if has("gui_running")
   set guifont=Source_Code_Pro:h12:cANSI
   set clipboard=unnamed
 endif
 
-colorscheme gruvbox
+colorscheme molokai
+
 set background=dark
 "================
 
