@@ -35,6 +35,7 @@ Plugin 'junegunn/vim-easy-align'
 Plugin 'whatyouhide/vim-textobj-xmlattr'
 Plugin 'tpope/vim-abolish'
 Plugin 'wting/rust.vim'
+Plugin 'cespare/vim-toml'
 call vundle#end()
 filetype plugin indent on
 "Airline
@@ -44,8 +45,9 @@ let g:airline_theme='base16'
 "Syntastic
 let g:syntastic_always_populate_loc_list=1
 " CtrlP.vim
-set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_extensions = ['tag']
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
 nnoremap <C-S-T> :CtrlPTag<CR>
 let g:delimitMate_expand_cr=2
 let g:delimitMate_expand_space=1
