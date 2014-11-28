@@ -163,24 +163,11 @@ autocmd FileType html,eruby  set expandtab
 autocmd FileType html,eruby  set softtabstop=2
 autocmd FileType html,eruby  set shiftwidth=2
 
-" completion
-let g:EclimCompletionMethod = 'omnifunc'
 "surround.vim settings!
 let g:surround_{char2nr('=')} = "<%= \r %>"
 let g:surround_{char2nr('#')} = "<%# \r %>"
 let g:surround_{char2nr('-')} = "<% \r %>"
 
-"function! InsertTabWrapper()
-"        let col = col('.') - 1
-"        if !col || getline('.')[col - 1] !~ '\k'
-"return "\<tab>"
-"        else
-"                return "\<c-p>"
-"        endif
-"endfunction
-"inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-"inoremap <s-tab> <c-n>
-"
  autocmd BufReadPost *
   \ if expand("<afile>:p:h") !=? $TEMP |
   \ if line("'\"") > 1 && line("'\"") <= line("$") |
