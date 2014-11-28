@@ -51,7 +51,7 @@ filetype plugin indent on
 "Airline
 let g:airline#extensions#tabline#enabled = 1
 set noshowmode
-let g:airline_theme='base16'
+let g:airline_theme='molokai'
 "Syntastic
 let g:syntastic_always_populate_loc_list=1
 " CtrlP.vim
