@@ -129,6 +129,7 @@ map <F5> :setlocal spell! spelllang=en_us<CR>
 map <C-C> :NERDTreeToggle<CR>
 
 nnoremap <Leader>h :nohlsearch<CR>
+inoremap jj <Esc>
 
 set list
 set listchars=tab:>-,trail:¶
@@ -159,6 +160,9 @@ autocmd FileType ruby set shiftwidth=2
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+
+let g:xml_syntax_folding=1
+autocmd FileType xml setlocal foldmethod=syntax
 
 autocmd FileType html,eruby  set tabstop=2
 autocmd FileType html,eruby  set expandtab
