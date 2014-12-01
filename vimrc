@@ -46,6 +46,7 @@ Plugin 'whatyouhide/vim-textobj-xmlattr'
 Plugin 'tpope/vim-abolish'
 Plugin 'wting/rust.vim'
 Plugin 'cespare/vim-toml'
+Plugin 'AndrewRadev/splitjoin.vim'
 call vundle#end()
 filetype plugin indent on
 "Airline
@@ -55,6 +56,7 @@ let g:airline_theme='molokai'
 "Syntastic
 let g:syntastic_always_populate_loc_list=1
 " CtrlP.vim
+noremap <C-S-B> :CtrlPBuffer<CR>
 let g:ctrlp_extensions = ['tag']
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
