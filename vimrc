@@ -47,6 +47,7 @@ Plugin 'tpope/vim-abolish'
 Plugin 'wting/rust.vim'
 Plugin 'cespare/vim-toml'
 Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'mhinz/vim-startify'
 call vundle#end()
 filetype plugin indent on
 "Airline
