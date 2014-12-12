@@ -137,6 +137,8 @@ inoremap jj <Esc>
 set list
 set listchars=tab:>-,trail:¶
 
+let g:surround_{char2nr('j')} = "$(\r)"
+
 let g:surround_{char2nr('c')} = "<!-- \r -->"
 let g:surround_{char2nr('C')} = "<![CDATA[\r]]>"
 vmap C Sc
