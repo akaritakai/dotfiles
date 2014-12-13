@@ -71,6 +71,11 @@ au VimEnter * RainbowParenthesesLoadSquare
 au VimEnter * RainbowParenthesesLoadBraces
 au VimEnter * RainbowParenthesesLoadChevrons
 
+"Startify
+let g:startify_bookmarks = [
+\  '~/.vimrc'
+\ ]
+
 "---
 let g:textobj_ruby_inner_branch=0
 
