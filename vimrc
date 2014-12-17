@@ -179,6 +179,8 @@ autocmd FileType html,eruby  set expandtab
 autocmd FileType html,eruby  set softtabstop=2
 autocmd FileType html,eruby  set shiftwidth=2
 
+autocmd FileType rust setlocal makeprg=cargo\ build\ --verbose
+
 "surround.vim settings!
 let g:surround_{char2nr('=')} = "<%= \r %>"
 let g:surround_{char2nr('#')} = "<%# \r %>"
