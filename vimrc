@@ -48,6 +48,7 @@ Plugin 'wting/rust.vim'
 Plugin 'cespare/vim-toml'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'mhinz/vim-startify'
+Plugin 'junegunn/vim-after-object'
 call vundle#end()
 filetype plugin indent on
 "Airline
@@ -155,6 +156,8 @@ hi Todo ctermbg=1 ctermfg=254
 
 filetype plugin on
 filetype indent on
+
+autocmd VimEnter * call after_object#enable('=', ':', '-', '#', ' ')
 
 autocmd FileType python set shiftwidth=4
 autocmd FileType python set softtabstop=4
