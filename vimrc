@@ -50,6 +50,8 @@ Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'mhinz/vim-startify'
 Plugin 'junegunn/vim-after-object'
 Plugin 'pangloss/vim-javascript'
+Plugin 'noprompt/vim-yardoc'
+Plugin 'chrisbra/Colorizer'
 call vundle#end()
 filetype plugin indent on
 "Airline
