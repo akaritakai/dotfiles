@@ -126,6 +126,9 @@ set incsearch
 set wildmenu
 set hidden
 
+set cole=1
+hi Conceal guibg=black guifg=white ctermbg=black ctermfg=white
+
 if exists('&breakindent')
   set breakindent
 endif
