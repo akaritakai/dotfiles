@@ -49,6 +49,7 @@ Plugin 'cespare/vim-toml'
 Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'mhinz/vim-startify'
 Plugin 'junegunn/vim-after-object'
+Plugin 'pangloss/vim-javascript'
 call vundle#end()
 filetype plugin indent on
 "Airline
@@ -85,6 +86,15 @@ vmap <Enter>         <Plug>(EasyAlign)
 vmap <Leader><Enter> <Plug>(LiveEasyAlign)
 " " Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
 nmap <Leader>a <Plug>(EasyAlign)
+
+"---
+
+let g:javascript_conceal = 1
+let g:javascript_conceal_function   = "ƒ"
+let g:javascript_conceal_null       = "ø"
+let g:javascript_conceal_this       = "@"
+let g:javascript_conceal_undefined  = "¿"
+let g:javascript_conceal_prototype  = "¶"
 
 "================
 " Color schemes
