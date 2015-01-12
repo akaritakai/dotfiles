@@ -95,6 +95,7 @@ let g:javascript_conceal_null       = "ø"
 let g:javascript_conceal_this       = "@"
 let g:javascript_conceal_undefined  = "¿"
 let g:javascript_conceal_prototype  = "¶"
+let g:javascript_conceal_return     = "←"
 
 "================
 " Color schemes
