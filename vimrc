@@ -107,7 +107,8 @@ endif
 if has("gui_running")
   set guifont=Source_Code_Pro:h12:cANSI
   set clipboard=unnamed
-  set guioptions-=mT
+  set guioptions-=m
+  set guioptions-=T
 endif
 
 colorscheme molokai
