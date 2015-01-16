@@ -118,6 +118,7 @@ if has("gui_running")
   set guioptions-=T
 endif
 
+
 colorscheme molokai
 
 set background=dark
@@ -202,10 +203,10 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 let g:xml_syntax_folding=1
 autocmd FileType xml setlocal foldmethod=syntax
 
-autocmd FileType html,eruby  set tabstop=2
-autocmd FileType html,eruby  set expandtab
-autocmd FileType html,eruby  set softtabstop=2
-autocmd FileType html,eruby  set shiftwidth=2
+autocmd FileType xml,html,eruby  set tabstop=2
+autocmd FileType xml,html,eruby  set expandtab
+autocmd FileType xml,html,eruby  set softtabstop=2
+autocmd FileType xml,html,eruby  set shiftwidth=2
 
 autocmd FileType rust setlocal makeprg=cargo\ build\ --verbose
 
