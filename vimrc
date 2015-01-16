@@ -69,10 +69,10 @@ let g:delimitMate_expand_cr=2
 let g:delimitMate_expand_space=1
 "Rainbow Parentheses
 au VimEnter * RainbowParenthesesToggle
-au VimEnter * RainbowParenthesesLoadRound
-au VimEnter * RainbowParenthesesLoadSquare
-au VimEnter * RainbowParenthesesLoadBraces
-au VimEnter * RainbowParenthesesLoadChevrons
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+au Syntax * RainbowParenthesesLoadChevrons
 
 "Startify
 let g:startify_bookmarks = [
