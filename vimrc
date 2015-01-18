@@ -208,6 +208,8 @@ autocmd FileType xml,html,eruby  set expandtab
 autocmd FileType xml,html,eruby  set softtabstop=2
 autocmd FileType xml,html,eruby  set shiftwidth=2
 
+autocmd FileType css ColorHighlight
+
 autocmd FileType rust setlocal makeprg=cargo\ build\ --verbose
 
 "surround.vim settings!
