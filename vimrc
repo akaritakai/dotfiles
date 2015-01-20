@@ -51,6 +51,7 @@ Plugin 'junegunn/vim-after-object'
 Plugin 'pangloss/vim-javascript'
 Plugin 'noprompt/vim-yardoc'
 Plugin 'chrisbra/Colorizer'
+Plugin 'mattn/emmet-vim'
 call vundle#end()
 filetype plugin indent on
 "Airline
@@ -86,6 +87,12 @@ let g:startify_custom_header = [
   \ '              |___/_/_/ /_/ /_/  /_/____/  /_/\____/|___/\___/',
   \ ''
   \ ]
+
+"---
+let g:user_emmet_install_global = 0
+autocmd FileType xml,html,eruby,css EmmetInstall
+let g:user_emmet_leader_key='<Leader>'
+
 
 "---
 let g:textobj_ruby_inner_branch=0
