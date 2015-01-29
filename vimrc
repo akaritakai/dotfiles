@@ -52,6 +52,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'noprompt/vim-yardoc'
 Plugin 'chrisbra/Colorizer'
 Plugin 'mattn/emmet-vim'
+Plugin 'fatih/vim-go'
 call vundle#end()
 filetype plugin indent on
 "Airline
@@ -81,12 +82,23 @@ let g:startify_bookmarks = [
 \ ]
 
 let g:startify_custom_header = [
+  \ '                      _              _         __',
   \ '               _   __(_)___ ___     (_)____   / /___ _   _____',
   \ '              | | / / / __ `__ \   / / ___/  / / __ \ | / / _ \',
   \ '              | |/ / / / / / / /  / (__  )  / / /_/ / |/ /  __/',
   \ '              |___/_/_/ /_/ /_/  /_/____/  /_/\____/|___/\___/',
   \ ''
   \ ]
+
+let g:startify_custom_footer = [
+ \ '',
+ \ '                        _              _         ___ ____',
+ \ '                 _   __(_)___ ___     (_)____   / (_) __/__',
+ \ '                | | / / / __ `__ \   / / ___/  / / / /_/ _ \',
+ \ '                | |/ / / / / / / /  / (__  )  / / / __/  __/',
+ \ '                |___/_/_/ /_/ /_/  /_/____/  /_/_/_/  \___/',
+ \ ''
+ \ ]
 
 "---
 let g:user_emmet_install_global = 0
