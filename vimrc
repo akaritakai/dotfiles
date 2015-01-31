@@ -143,7 +143,6 @@ colorscheme molokai
 set background=dark
 "================
 
-set mps+=<:>
 
 set bs=2
 syntax enable
@@ -222,10 +221,11 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 let g:xml_syntax_folding=1
 autocmd FileType xml setlocal foldmethod=syntax
 
-autocmd FileType xml,html,eruby  set tabstop=2
-autocmd FileType xml,html,eruby  set expandtab
-autocmd FileType xml,html,eruby  set softtabstop=2
-autocmd FileType xml,html,eruby  set shiftwidth=2
+autocmd FileType xml,html,eruby set tabstop=2
+autocmd FileType xml,html,eruby set expandtab
+autocmd FileType xml,html,eruby set softtabstop=2
+autocmd FileType xml,html,eruby set shiftwidth=2
+autocmd FileType xml,html,eruby set mps+=<:>
 
 autocmd FileType css ColorHighlight
 
