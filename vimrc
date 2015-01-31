@@ -227,6 +227,8 @@ autocmd FileType xml,html,eruby set softtabstop=2
 autocmd FileType xml,html,eruby set shiftwidth=2
 autocmd FileType xml,html,eruby set mps+=<:>
 
+autocmd FileType go nnoremap <Leader>gr :GoRun<CR>
+
 autocmd FileType css ColorHighlight
 
 autocmd FileType rust setlocal makeprg=cargo\ build\ --verbose
