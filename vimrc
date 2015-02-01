@@ -157,6 +157,7 @@ set incsearch
 set wildmenu
 set hidden
 
+
 set cole=1
 hi Conceal guibg=black guifg=white ctermbg=black ctermfg=white
 
@@ -181,6 +182,8 @@ command Q q
 map <F5> :setlocal spell! spelllang=en_us<CR>
 map <C-C> :NERDTreeToggle<CR>
 
+let mapleader = "\<Space>"
+nnoremap <Leader>w :w<CR>
 nnoremap <Leader>h :nohlsearch<CR>
 inoremap jj <Esc>
 
