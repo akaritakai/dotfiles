@@ -51,7 +51,6 @@ Plugin 'junegunn/vim-after-object'
 Plugin 'pangloss/vim-javascript'
 Plugin 'noprompt/vim-yardoc'
 Plugin 'chrisbra/Colorizer'
-Plugin 'mattn/emmet-vim'
 Plugin 'fatih/vim-go'
 call vundle#end()
 filetype plugin indent on
@@ -101,9 +100,6 @@ let g:startify_custom_footer = [
  \ ]
 
 "---
-let g:user_emmet_install_global = 0
-autocmd FileType xml,html,eruby,css EmmetInstall
-let g:user_emmet_leader_key='<Leader>'
 
 
 "---
