@@ -6,21 +6,16 @@ set fillchars+=stl:\ ,stlnc:\
 " vim-plug
 if has('unix')
   let plugpath=$HOME.'/.vim/autoload/plug.vim'
+  let path='~/.vim/bundle'
 elseif has('win32')
   let plugpath=$HOME.'/vimfiles/autoload/plug.vim'
+  let path='~/vimfiles/bundle'
 endif
 if empty(glob(plugpath))
   " Initial bootstrapping on first install
   execute 'silent !curl -fLo ' . plugpath . ' --create-dirs ' .
     \ 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall
-endif
-if has('unix')
-  set rtp+=~/.vim/bundle/Vundle.vim/
-  let path='~/.vim/bundle'
-elseif has('win32')
-  set rtp+=~/vimfiles/bundle/Vundle.vim/
-  let path='~/vimfiles/bundle'
 endif
 call plug#begin(path)
 Plug 'kien/ctrlp.vim'
