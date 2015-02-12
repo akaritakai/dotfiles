@@ -3,57 +3,71 @@ set t_Co=256
 set laststatus=2
 set fillchars+=stl:\ ,stlnc:\
 "=================
-" Vundle config
-filetype off
+" vim-plug
+if has('unix')
+  let plugpath=$HOME.'/.vim/autoload/plug.vim'
+elseif has('win32')
+  let plugpath=$HOME.'/vimfiles/autoload/plug.vim'
+endif
+if empty(glob(plugpath))
+  " Initial bootstrapping on first install
+  execute 'silent !curl -fLo ' . plugpath . ' --create-dirs ' .
+    \ 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall
+endif
 if has('unix')
   set rtp+=~/.vim/bundle/Vundle.vim/
-  call vundle#begin()
+  let path='~/.vim/bundle'
 elseif has('win32')
   set rtp+=~/vimfiles/bundle/Vundle.vim/
   let path='~/vimfiles/bundle'
-  call vundle#begin(path)
 endif
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
+call plug#begin(path)
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
 if executable('ctags')
-  Plugin 'vim-scripts/taglist.vim'
+  Plug 'vim-scripts/taglist.vim'
 end
-Plugin 'tpope/vim-bundler'
-Plugin 'tomasr/molokai'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'gmarik/Vundle.vim'
+Plug 'tpope/vim-bundler'
+Plug 'tomasr/molokai'
+Plug 'airblade/vim-gitgutter'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'gmarik/Vundle.vim'
 if !empty(glob('~/.use_ycm'))
-  Plugin 'Valloric/YouCompleteMe'
+  Plug 'Valloric/YouCompleteMe', { 'on': [] }
+  augroup load_ycm
+    autocmd!
+    autocmd InsertEnter * call plug#load('YouCompleteMe')
+                       \| call youcompleteme#Enable() | autocmd! load_ycm
+  augroup END
 endif
-Plugin 'Raimondi/delimitMate'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-commentary'
-Plugin 'lepture/vim-jinja'
-Plugin 'tpope/vim-rails'
-Plugin 'nginx.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-Plugin 'bling/vim-airline'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-fugitive'
-Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'kana/vim-textobj-user'
-Plugin 'tek/vim-textobj-ruby'
-Plugin 'junegunn/vim-easy-align'
-Plugin 'whatyouhide/vim-textobj-xmlattr'
-Plugin 'tpope/vim-abolish'
-Plugin 'wting/rust.vim'
-Plugin 'cespare/vim-toml'
-Plugin 'AndrewRadev/splitjoin.vim'
-Plugin 'mhinz/vim-startify'
-Plugin 'junegunn/vim-after-object'
-Plugin 'pangloss/vim-javascript'
-Plugin 'noprompt/vim-yardoc'
-Plugin 'chrisbra/Colorizer'
-Plugin 'fatih/vim-go'
-call vundle#end()
-filetype plugin indent on
+Plug 'Raimondi/delimitMate'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-commentary'
+Plug 'lepture/vim-jinja'
+Plug 'tpope/vim-rails'
+Plug 'evanmiller/nginx-vim-syntax'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'bling/vim-airline'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-fugitive'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'kana/vim-textobj-user'
+Plug 'tek/vim-textobj-ruby'
+Plug 'junegunn/vim-easy-align'
+Plug 'whatyouhide/vim-textobj-xmlattr'
+Plug 'tpope/vim-abolish'
+Plug 'wting/rust.vim'
+Plug 'cespare/vim-toml'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'mhinz/vim-startify'
+Plug 'junegunn/vim-after-object'
+Plug 'pangloss/vim-javascript'
+Plug 'noprompt/vim-yardoc'
+Plug 'chrisbra/Colorizer'
+Plug 'fatih/vim-go'
+call plug#end()
 "Airline
 let g:airline#extensions#tabline#enabled = 1
 set noshowmode
