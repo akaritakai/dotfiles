@@ -62,10 +62,14 @@ Plug 'pangloss/vim-javascript'
 Plug 'noprompt/vim-yardoc'
 Plug 'chrisbra/Colorizer'
 Plug 'fatih/vim-go'
+Plug 'wesQ3/vim-windowswap'
 call plug#end()
 "Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#hunks#enabled = 1
+let g:airline#extensions#hunks#hunk_symbols = ['+', '~', '-']
+let g:airline#extensions#ctrlp#show_adjacent_modes = 1
 set noshowmode
 let g:airline_theme='molokai'
 "Syntastic
