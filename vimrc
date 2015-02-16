@@ -27,7 +27,7 @@ Plug 'tpope/vim-bundler'
 Plug 'tomasr/molokai'
 Plug 'airblade/vim-gitgutter'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'gmarik/Vundle.vim'
+Plug 'scrooloose/syntastic'
 if !empty(glob('~/.use_ycm'))
   Plug 'Valloric/YouCompleteMe', { 'on': [] }
   augroup load_ycm
@@ -65,10 +65,14 @@ Plug 'fatih/vim-go'
 call plug#end()
 "Airline
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#syntastic#enabled = 1
 set noshowmode
 let g:airline_theme='molokai'
 "Syntastic
-let g:syntastic_always_populate_loc_list=1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 " CtrlP.vim
 noremap <C-S-B> :CtrlPBuffer<CR>
 let g:ctrlp_extensions = ['tag']
