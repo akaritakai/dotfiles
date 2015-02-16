@@ -19,3 +19,5 @@
 	dif = diff
 [push]
 	default = simple
+[pull]
+	rebase = true
