@@ -92,6 +92,9 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 au Syntax * RainbowParenthesesLoadChevrons
 
+"Taglist
+noremap <F11> :Tlist<CR>
+
 "Startify
 let g:startify_bookmarks = [
 \  '~/.vimrc'
@@ -254,26 +257,25 @@ let g:surround_{char2nr('=')} = "<%= \r %>"
 let g:surround_{char2nr('#')} = "<%# \r %>"
 let g:surround_{char2nr('-')} = "<% \r %>"
 
- autocmd BufReadPost *
-  \ if expand("<afile>:p:h") !=? $TEMP |
-  \ if line("'\"") > 1 && line("'\"") <= line("$") |
-  \ let JumpCursorOnEdit_foo = line("'\"") |
-  \ let b:doopenfold = 1 |
-  \ if (foldlevel(JumpCursorOnEdit_foo) > foldlevel(JumpCursorOnEdit_foo - 1)) |
-  \ let JumpCursorOnEdit_foo = JumpCursorOnEdit_foo - 1 |
-  \ let b:doopenfold = 2 |
-  \ endif |
-  \ exe JumpCursorOnEdit_foo |
-  \ endif |
-  \ endif |
-  \ autocmd BufWinEnter *
-  \ if exists("b:doopenfold") |
-  \ exe "normal zv" |
-  \ if(b:doopenfold > 1) |
-  \ exe "+".1 |
-  \ endif |
-  \ unlet b:doopenfold |
-  \ endif
- augroup END
+autocmd BufReadPost *
+ \ if expand("<afile>:p:h") !=? $TEMP |
+ \ if line("'\"") > 1 && line("'\"") <= line("$") |
+ \ let JumpCursorOnEdit_foo = line("'\"") |
+ \ let b:doopenfold = 1 |
+ \ if (foldlevel(JumpCursorOnEdit_foo) > foldlevel(JumpCursorOnEdit_foo - 1)) |
+ \ let JumpCursorOnEdit_foo = JumpCursorOnEdit_foo - 1 |
+ \ let b:doopenfold = 2 |
+ \ endif |
+ \ exe JumpCursorOnEdit_foo |
+ \ endif |
+ \ endif |
+ \ autocmd BufWinEnter *
+ \ if exists("b:doopenfold") |
+ \ exe "normal zv" |
+ \ if(b:doopenfold > 1) |
+ \ exe "+".1 |
+ \ endif |
+ \ unlet b:doopenfold |
+ \ endif
 
- autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
