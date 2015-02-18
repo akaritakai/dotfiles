@@ -22,6 +22,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 if executable('ctags')
   Plug 'vim-scripts/taglist.vim'
+  noremap <F11> :Tlist<CR>
 end
 Plug 'tpope/vim-bundler'
 Plug 'tomasr/molokai'
@@ -91,9 +92,6 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 au Syntax * RainbowParenthesesLoadChevrons
-
-"Taglist
-noremap <F11> :Tlist<CR>
 
 "Startify
 let g:startify_bookmarks = [
