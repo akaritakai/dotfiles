@@ -19,8 +19,8 @@ set ffs=unix,dos,mac
 set autoindent
 " Use line numbering
 set number
-" Don't use the Vim modeline (airline handles this for us)
-set nomodeline
+" Allow using a modeline (:help modeline)
+set modeline
 " Don't use the Vim ruler (airline has this too)
 set noruler
 " When a bracket is inserted, briefly jump to the matching one if it can be
