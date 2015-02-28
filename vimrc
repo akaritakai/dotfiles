@@ -1,9 +1,66 @@
+" The very basics {{{
+" Be improved
 set nocompatible
+" 256 colors
 set t_Co=256
-set laststatus=2
-set fillchars+=stl:\ ,stlnc:\
-"=================
-" vim-plug
+" Allow backspacing like in a non-Vim editor
+set bs=2
+" Enable syntax highlighting
+syntax enable
+" Enable plugins and indentation based on filetypes detection.
+filetype plugin on
+filetype indent on
+" Default to UTF-8 encoding
+set encoding=utf8
+" Default to Unix line endings on new files, read as Unix line endings first,
+" then DOS -> Mac
+set ffs=unix,dos,mac
+" Use the autoindenter, based on syntax
+set autoindent
+" Use line numbering
+set number
+" Don't use the Vim modeline (airline handles this for us)
+set nomodeline
+" Don't use the Vim ruler (airline has this too)
+set noruler
+" When a bracket is inserted, briefly jump to the matching one if it can be
+" seen on the screen.
+set showmatch
+" Incremental search -- search as you type
+set incsearch
+" Use the much improved wildmenu when completing options
+set wildmenu
+" Allow background buffers without having to save them to disk first
+set hidden
+" breakindent: indentations continue on next line if soft line wrapped
+if exists('&breakindent')
+  set breakindent
+endif
+" folding uses syntax with a maximum of two nesting levels
+set foldmethod=syntax
+set foldnestmax=2
+" Add a line on the 80th column
+set colorcolumn=80
+" Highlight the line that the cursor is on (for near instant identification)
+set cul
+" Allow mouse usage in normal mode and help files
+set mouse=nh
+" list: show certain characters with representations
+set list
+" tabs are shown as >-----, trailing spaces are shown with a special mark
+set listchars=tab:>-,trail:¶
+
+" toggle spell checking with F5
+map <F5> :setlocal spell! spelllang=en_us<CR>
+
+" }}}
+" Handy remappings {{{
+let mapleader = "\<Space>"
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>h :nohlsearch<CR>
+inoremap jj <Esc>
+"}}}
+" vim-plug {{{
 if has('unix')
   let plugpath=$HOME.'/.vim/autoload/plug.vim'
   let path='~/.vim/bundle'
@@ -17,6 +74,7 @@ if empty(glob(plugpath))
     \ 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall
 endif
+" Plugins {{{
 call plug#begin(path)
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
@@ -64,36 +122,37 @@ Plug 'noprompt/vim-yardoc'
 Plug 'chrisbra/Colorizer'
 Plug 'fatih/vim-go'
 Plug 'wesQ3/vim-windowswap'
-call plug#end()
-"Airline
+call plug#end() "}}} }}}
+"Airline {{{
+"Always give the last window a status line
+set laststatus=2
+" Never put a (vim default) message on the status line about the mode
+" (airline does this for me)
+set noshowmode
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#hunks#enabled = 1
 let g:airline#extensions#hunks#hunk_symbols = ['+', '~', '-']
 let g:airline#extensions#ctrlp#show_adjacent_modes = 1
-set noshowmode
-let g:airline_theme='molokai'
-"Syntastic
+let g:airline_theme='molokai' "}}}
+"Syntastic {{{
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-" CtrlP.vim
-noremap <C-S-B> :CtrlPBuffer<CR>
+let g:syntastic_check_on_wq = 0 "}}}
+" CtrlP.vim {{{
 let g:ctrlp_extensions = ['tag']
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-
-nnoremap <C-S-T> :CtrlPTag<CR>
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard'] "}}}
+" delimitMate {{{
 let g:delimitMate_expand_cr=2
-let g:delimitMate_expand_space=1
-"Rainbow Parentheses
+let g:delimitMate_expand_space=1 "}}}
+"Rainbow Parentheses {{{
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
-au Syntax * RainbowParenthesesLoadChevrons
-
-"Startify
+au Syntax * RainbowParenthesesLoadChevrons "}}}
+"Startify {{{
 let g:startify_bookmarks = [
 \  '~/.vimrc'
 \ ]
@@ -116,31 +175,38 @@ let g:startify_custom_footer = [
  \ '                |___/_/_/ /_/ /_/  /_/____/  /_/_/_/  \___/',
  \ ''
  \ ]
-
-"---
-
-
-"---
-let g:textobj_ruby_inner_branch=0
-
+" }}}
+" vim-textobj-user {{{
+autocmd VimEnter * call after_object#enable('=', ':', '-', '#', ' ')
+" }}}
+"vim-textobj-ruby {{{
+let g:textobj_ruby_inner_branch=0 "}}}
+"vim-easy-align {{{
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
 vmap <Enter>         <Plug>(EasyAlign)
 vmap <Leader><Enter> <Plug>(LiveEasyAlign)
 " " Start interactive EasyAlign for a motion/text object (e.g. <Leader>aip)
-nmap <Leader>a <Plug>(EasyAlign)
-
-"---
-
+nmap <Leader>a <Plug>(EasyAlign) "}}}
+" vim-javascript {{{
 let g:javascript_conceal = 1
 let g:javascript_conceal_function   = "ƒ"
 let g:javascript_conceal_null       = "ø"
 let g:javascript_conceal_this       = "@"
 let g:javascript_conceal_undefined  = "¿"
 let g:javascript_conceal_prototype  = "¶"
-let g:javascript_conceal_return     = "←"
-
-"================
-" Color schemes
+let g:javascript_conceal_return     = "←" "}}}
+" NERDTree {{{
+map <C-C> :NERDTreeToggle<CR>
+"}}}
+"surround.vim {{{
+let g:surround_{char2nr('=')} = "<%= \r %>"
+let g:surround_{char2nr('#')} = "<%# \r %>"
+let g:surround_{char2nr('-')} = "<% \r %>"
+let g:surround_{char2nr('j')} = "$(\r)"
+vmap C Sc
+let g:surround_{char2nr('c')} = "<!-- \r -->"
+let g:surround_{char2nr('C')} = "<![CDATA[\r]]>" "}}}
+" Color schemes and other GUI things {{{
 if !has("gui_running")
   let g:rehash256 = 1
 endif
@@ -151,75 +217,22 @@ if has("gui_running")
   set guioptions-=T
 endif
 
-
 colorscheme molokai
-
-set background=dark
-"================
-
-
-set bs=2
-syntax enable
-set encoding=utf8
-set ffs=unix,dos,mac
-set ai
-set number
-set modeline
-set ruler
-set showmatch
-set incsearch
-set wildmenu
-set hidden
-
-
-set cole=1
-hi Conceal guibg=black guifg=white ctermbg=black ctermfg=white
-
-if exists('&breakindent')
-  set breakindent
-endif
-
-set foldmethod=syntax
-set foldnestmax=2
-
-set colorcolumn=80
-set cul
-
-set mouse=nh
-
+set background=dark "}}}
+" Concealing (requires a vim with +conceal) {{{
+if has('conceal')
+  set cole=1
+  hi Conceal guibg=black guifg=white ctermbg=black ctermfg=white
+endif "}}}
+" Account for accidentally holding down shift while trying to save or exit {{{
 command WQ wq
 command Wq wq
 command W w
-command Q q
-
-" toggle spell checking with F5
-map <F5> :setlocal spell! spelllang=en_us<CR>
-map <C-C> :NERDTreeToggle<CR>
-
-let mapleader = "\<Space>"
-nnoremap <Leader>w :w<CR>
-nnoremap <Leader>h :nohlsearch<CR>
-inoremap jj <Esc>
-
-set list
-set listchars=tab:>-,trail:¶
-
-let g:surround_{char2nr('j')} = "$(\r)"
-
-let g:surround_{char2nr('c')} = "<!-- \r -->"
-let g:surround_{char2nr('C')} = "<![CDATA[\r]]>"
-vmap C Sc
-
-autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
-"hi CursorLine term=none cterm=none ctermbg=3
-
+command Q q "}}}
+" Re-color TODOs to be white on red. {{{
 hi Todo ctermbg=1 ctermfg=254
-
-filetype plugin on
-filetype indent on
-
-autocmd VimEnter * call after_object#enable('=', ':', '-', '#', ' ')
-
+" }}}
+" Per-filetype settings {{{
 autocmd FileType python set shiftwidth=4
 autocmd FileType python set softtabstop=4
 autocmd FileType python set expandtab
@@ -229,8 +242,7 @@ autocmd FileType ruby set expandtab
 autocmd FileType ruby set softtabstop=2
 autocmd FileType ruby set shiftwidth=2
 
-"Shamelessly stolen from
-"http://stackoverflow.com/questions/14333508/vim-ruby-autocomplete
+autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
@@ -244,17 +256,19 @@ autocmd FileType xml,html,eruby set softtabstop=2
 autocmd FileType xml,html,eruby set shiftwidth=2
 autocmd FileType xml,html,eruby set mps+=<:>
 
+autocmd FileType vim set tabstop=2
+autocmd FileType vim set expandtab
+autocmd FileType vim set softtabstop=2
+autocmd FileType vim set shiftwidth=2
+
 autocmd FileType go nnoremap <Leader>gr :GoRun<CR>
 
 autocmd FileType css ColorHighlight
 
-autocmd FileType rust setlocal makeprg=cargo\ build\ --verbose
-
-"surround.vim settings!
-let g:surround_{char2nr('=')} = "<%= \r %>"
-let g:surround_{char2nr('#')} = "<%# \r %>"
-let g:surround_{char2nr('-')} = "<% \r %>"
-
+autocmd FileType rust setlocal makeprg=cargo\ build\ --verbose "}}}
+" Convenience functions {{{
+" Automatically jump to where you were when you closed the file upon
+" re-opening it {{{
 autocmd BufReadPost *
  \ if expand("<afile>:p:h") !=? $TEMP |
  \ if line("'\"") > 1 && line("'\"") <= line("$") |
@@ -274,6 +288,10 @@ autocmd BufReadPost *
  \ exe "+".1 |
  \ endif |
  \ unlet b:doopenfold |
- \ endif
-
+ \ endif " }}}
+" Close Vim if NERDTree is the last thing open {{{
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+"}}}
+""}}}
+
+" vim:fdm=marker ts=2 sw=2 et
