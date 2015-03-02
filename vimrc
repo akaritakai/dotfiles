@@ -78,6 +78,8 @@ endif
 call plug#begin(path)
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 if executable('ctags')
   Plug 'vim-scripts/taglist.vim'
   noremap <F11> :Tlist<CR>
@@ -152,6 +154,13 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 au Syntax * RainbowParenthesesLoadChevrons "}}}
+" UltiSnips {{{
+ let g:UltiSnipsExpandTrigger="<c-e>"
+ let g:UltiSnipsListSnippets="<c-a-e>"
+ let g:UltiSnipsJumpForwardTrigger="<c-j>"
+ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+ let g:UltiSnipsEditSplit="vertical"
+" }}}
 "Startify {{{
 let g:startify_bookmarks = [
 \  '~/.vimrc'
