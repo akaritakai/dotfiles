@@ -78,8 +78,10 @@ endif
 call plug#begin(path)
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+if has('python')
+  Plug 'SirVer/ultisnips'
+  Plug 'honza/vim-snippets'
+endif
 if executable('ctags')
   Plug 'vim-scripts/taglist.vim'
   noremap <F11> :Tlist<CR>
