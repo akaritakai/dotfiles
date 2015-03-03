@@ -154,8 +154,7 @@ let g:delimitMate_expand_space=1 "}}}
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-au Syntax * RainbowParenthesesLoadChevrons "}}}
+au Syntax * RainbowParenthesesLoadBraces "}}}
 " UltiSnips {{{
  let g:UltiSnipsExpandTrigger="<c-e>"
  let g:UltiSnipsListSnippets="<c-a-e>"
