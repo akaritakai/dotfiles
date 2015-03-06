@@ -75,7 +75,7 @@ RPROMPT=[%D{%H:%M:%S}]
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 alias gpom="git push origin master"
 ddg() { lynx ddg.gg; }
-eval `keychain --eval --quiet --quick ~/.ssh/id_rsa ~/.ssh/id_rsa.old F637E333`
+eval `keychain --eval --quiet --quick ~/.ssh/id_rsa ~/.ssh/id_rsa.old`
 rand_name_for_mp3() { local name=$1; name=${name%.mp3}-$(openssl rand -hex 6).mp3; echo $name }
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
