@@ -78,31 +78,14 @@ endif
 call plug#begin(path)
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
-if has('python')
-  Plug 'SirVer/ultisnips'
-  Plug 'honza/vim-snippets'
-endif
-if executable('ctags')
-  Plug 'vim-scripts/taglist.vim'
-  noremap <F11> :Tlist<CR>
-end
 Plug 'tpope/vim-bundler'
 Plug 'tomasr/molokai'
 Plug 'airblade/vim-gitgutter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'scrooloose/syntastic'
-if !empty(glob('~/.use_ycm'))
-  Plug 'Valloric/YouCompleteMe', { 'on': [] }
-  augroup load_ycm
-    autocmd!
-    autocmd InsertEnter * call plug#load('YouCompleteMe')
-                       \| call youcompleteme#Enable() | autocmd! load_ycm
-  augroup END
-endif
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-commentary'
-Plug 'lepture/vim-jinja'
 Plug 'tpope/vim-rails'
 Plug 'evanmiller/nginx-vim-syntax'
 Plug 'tpope/vim-surround'
@@ -116,16 +99,32 @@ Plug 'tek/vim-textobj-ruby'
 Plug 'junegunn/vim-easy-align'
 Plug 'whatyouhide/vim-textobj-xmlattr'
 Plug 'tpope/vim-abolish'
-Plug 'wting/rust.vim'
-Plug 'cespare/vim-toml'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'mhinz/vim-startify'
 Plug 'junegunn/vim-after-object'
 Plug 'pangloss/vim-javascript'
 Plug 'noprompt/vim-yardoc'
 Plug 'chrisbra/Colorizer'
-Plug 'fatih/vim-go'
 Plug 'wesQ3/vim-windowswap'
+Plug 'mxw/vim-jsx'
+" todo: only load language-specific plugins on entering a buffer of the
+" correct filetype
+if has('python')
+  Plug 'SirVer/ultisnips'
+  Plug 'honza/vim-snippets'
+endif
+if executable('ctags')
+  Plug 'vim-scripts/taglist.vim'
+  noremap <F11> :Tlist<CR>
+end
+if !empty(glob('~/.use_ycm'))
+  Plug 'Valloric/YouCompleteMe', { 'on': [] }
+  augroup load_ycm
+    autocmd!
+    autocmd InsertEnter * call plug#load('YouCompleteMe')
+                       \| call youcompleteme#Enable() | autocmd! load_ycm
+  augroup END
+endif
 call plug#end() "}}} }}}
 "Airline {{{
 "Always give the last window a status line
