@@ -270,6 +270,11 @@ autocmd FileType vim set expandtab
 autocmd FileType vim set softtabstop=2
 autocmd FileType vim set shiftwidth=2
 
+autocmd FileType javascript set tabstop=2
+autocmd FileType javascript set expandtab
+autocmd FileType javascript set softtabstop=2
+autocmd FileType javascript set shiftwidth=2
+
 autocmd FileType go nnoremap <Leader>gr :GoRun<CR>
 
 autocmd FileType css ColorHighlight
