@@ -136,8 +136,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#hunks#enabled = 1
 let g:airline#extensions#hunks#hunk_symbols = ['+', '~', '-']
-let g:airline#extensions#ctrlp#show_adjacent_modes = 1
-let g:airline_theme='molokai' "}}}
+let g:airline#extensions#ctrlp#show_adjacent_modes = 1 "}}}
 "Syntastic {{{
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -216,18 +215,18 @@ vmap C Sc
 let g:surround_{char2nr('c')} = "<!-- \r -->"
 let g:surround_{char2nr('C')} = "<![CDATA[\r]]>" "}}}
 " Color schemes and other GUI things {{{
-if !has("gui_running")
-  let g:rehash256 = 1
-endif
 if has("gui_running")
   set guifont=Source_Code_Pro:h12:cANSI
   set clipboard=unnamed
   set guioptions-=m
   set guioptions-=T
+else
+  let g:rehash256 = 1
 endif
 
 colorscheme molokai
-set background=dark "}}}
+
+"}}}
 " Concealing (requires a vim with +conceal) {{{
 if has('conceal')
   set cole=1
