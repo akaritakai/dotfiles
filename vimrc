@@ -10,6 +10,8 @@ syntax enable
 " Enable plugins and indentation based on filetypes detection.
 filetype plugin on
 filetype indent on
+" load matchit.vim, for purposes of quickly jumping to matching tags
+runtime macros/matchit.vim
 " Default to UTF-8 encoding
 set encoding=utf8
 " Default to Unix line endings on new files, read as Unix line endings first,
