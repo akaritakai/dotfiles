@@ -277,6 +277,9 @@ autocmd FileType javascript set expandtab
 autocmd FileType javascript set softtabstop=2
 autocmd FileType javascript set shiftwidth=2
 
+autocmd BufEnter *.jsx let g:syntastic_javascript_checkers = ['jsxhint']
+autocmd BufEnter *.js let g:syntastic_javascript_checkers = ['jshint']
+
 autocmd FileType go nnoremap <Leader>gr :GoRun<CR>
 
 autocmd FileType css ColorHighlight
