@@ -79,5 +79,4 @@ eval `keychain --eval --quiet --quick ~/.ssh/id_rsa ~/.ssh/id_rsa.old`
 rand_name_for_mp3() { local name=$1; name=${name%.mp3}-$(openssl rand -hex 6).mp3; echo $name }
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-
+function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
