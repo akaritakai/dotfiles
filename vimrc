@@ -83,7 +83,7 @@ call plug#begin(path)
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-bundler'
-Plug 'tomasr/molokai'
+Plug 'sjl/badwolf'
 Plug 'airblade/vim-gitgutter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'scrooloose/syntastic'
@@ -229,7 +229,7 @@ else
   let g:rehash256 = 1
 endif
 
-colorscheme molokai
+colorscheme badwolf
 
 "}}}
 " Concealing (requires a vim with +conceal) {{{
