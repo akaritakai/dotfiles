@@ -32,6 +32,8 @@ set showmatch
 set incsearch
 " Use the much improved wildmenu when completing options
 set wildmenu
+" Only redraw when necessary (e.g. not in the middle of macros...)
+set lazyredraw
 " Allow background buffers without having to save them to disk first
 set hidden
 " breakindent: indentations continue on next line if soft line wrapped
