@@ -270,10 +270,10 @@ autocmd FileType xml,html,eruby set softtabstop=2
 autocmd FileType xml,html,eruby set shiftwidth=2
 autocmd FileType xml,html,eruby set mps+=<:>
 
-autocmd FileType css set tabstop=2
-autocmd FileType css set expandtab
-autocmd FileType css set softtabstop=2
-autocmd FileType css set shiftwidth=2
+autocmd FileType scss,css set tabstop=2
+autocmd FileType scss,css set expandtab
+autocmd FileType scss,css set softtabstop=2
+autocmd FileType scss,css set shiftwidth=2
 
 autocmd FileType vim set tabstop=2
 autocmd FileType vim set expandtab
