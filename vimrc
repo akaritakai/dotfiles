@@ -53,6 +53,12 @@ set mouse=nh
 set list
 " tabs are shown as >-----, trailing spaces are shown with a special mark
 set listchars=tab:>-,trail:¶
+" use the system clipboard for vim whenever possible
+if has('unnamedplus')
+  set clipboard=unnamedplus
+else
+  set clipboard=unnamed
+end
 
 " toggle spell checking with F5
 map <F5> :setlocal spell! spelllang=en_us<CR>
@@ -224,7 +230,6 @@ let g:surround_{char2nr('C')} = "<![CDATA[\r]]>" "}}}
 " Color schemes and other GUI things {{{
 if has("gui_running")
   set guifont=Source_Code_Pro:h12:cANSI
-  set clipboard=unnamed
   set guioptions-=m
   set guioptions-=T
 else
