@@ -216,6 +216,13 @@ let g:javascript_conceal_this       = "@"
 let g:javascript_conceal_undefined  = "¿"
 let g:javascript_conceal_prototype  = "¶"
 let g:javascript_conceal_return     = "←" "}}}
+" vim-go {{{
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+" }}}
 " NERDTree {{{
 map <C-C> :NERDTreeToggle<CR>
 "}}}
@@ -295,6 +302,18 @@ autocmd BufEnter *.jsx let g:syntastic_javascript_checkers = ['jsxhint']
 autocmd BufEnter *.js let g:syntastic_javascript_checkers = ['jshint']
 
 autocmd FileType go nnoremap <Leader>gr :GoRun<CR>
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>e <Plug>(go-rename)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
 
 autocmd FileType css ColorHighlight
 
