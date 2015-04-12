@@ -154,6 +154,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_ruby_mri_quiet_messages = { "regex": "interpreted as argument prefix" }
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 let g:syntastic_check_on_wq = 0 "}}}
 " CtrlP.vim {{{
 let g:ctrlp_extensions = ['tag']
