@@ -61,11 +61,21 @@ PATH="/usr/local/bin:/usr/bin:/bin:/usr/games"
 if [[ -e "$HOME/bin" ]] ; then
 	PATH="$HOME/bin:$PATH";
 fi
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+if [ -d "$HOME/code/coverity/bin" ] ; then
+	PATH="$PATH:$HOME/code/coverity/bin"
+fi
 
 for file in ~/.zsh/*; do source $file; done
 
+EDITOR=vim
+VISUAL=$EDITOR
+SELECTED_EDITOR=$EDITOR
+export EDITOR VISUAL SELECTED_EDITOR
 export GOPATH=$HOME/go
-export PATH=$PATH:/usr/lib/go/bin:$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin:/usr/lib/go/bin:$GOPATH/bin
 
 export LANG=en_US.UTF-8
 
@@ -80,3 +90,10 @@ rand_name_for_mp3() { local name=$1; name=${name%.mp3}-$(openssl rand -hex 6).mp
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+alias new_shell='exec $SHELL'
+
+ddg() { lynx ddg.gg; } 
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

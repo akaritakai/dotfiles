@@ -15,23 +15,3 @@ if [ -n "$BASH_VERSION" ]; then
 	. "$HOME/.bashrc"
     fi
 fi
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
-if [ -d "$HOME/code/coverity/bin" ] ; then
-	PATH="$PATH:$HOME/code/coverity/bin"
-fi
-EDITOR=vim
-VISUAL=$EDITOR
-SELECTED_EDITOR=$EDITOR
-export EDITOR VISUAL SELECTED_EDITOR
-ddg() { lynx ddg.gg; } 
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
