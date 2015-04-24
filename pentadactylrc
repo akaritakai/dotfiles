@@ -1,5 +1,5 @@
 set guioptions+=BTn
 map x :q<CR>
 map gr :open http://www.reddit.com/r/
-map gn :open https://ww.netflix.com/WiHome<CR>
+map gn :open https://www.netflix.com/WiHome<CR>
 autocmd LocationChange medium.com/.*/edit :normal! <C-z>
