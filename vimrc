@@ -119,6 +119,7 @@ Plug 'mxw/vim-jsx'
 Plug 'tpope/vim-rails'
 Plug 'tek/vim-textobj-ruby'
 Plug 'noprompt/vim-yardoc'
+Plug 'hynek/vim-python-pep8-indent'
 " todo: only load language-specific plugins on entering a buffer of the
 " correct filetype
 if has('python')
