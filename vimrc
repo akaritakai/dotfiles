@@ -69,6 +69,7 @@ let mapleader = "\<Space>"
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>h :nohlsearch<CR>
 inoremap jj <Esc>
+nnoremap <Leader>n :set relativenumber!<CR>
 "}}}
 " vim-plug {{{
 if has('unix')
