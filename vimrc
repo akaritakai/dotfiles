@@ -127,10 +127,20 @@ if has('python')
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
 endif
+
 if executable('ctags')
   Plug 'vim-scripts/taglist.vim'
   noremap <F11> :Tlist<CR>
-end
+endif
+
+if executable('ack')
+  Plug 'mileszs/ack.vim'
+endif
+
+if executable('ag')
+  Plug 'rking/ag.vim'
+endif
+
 if !empty(glob('~/.use_ycm'))
   Plug 'Valloric/YouCompleteMe', { 'on': [] }
   augroup load_ycm
