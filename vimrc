@@ -64,6 +64,11 @@ end
 map <F5> :setlocal spell! spelllang=en_us<CR>
 
 " }}}
+" Neovim stuff {{{
+if has('nvim')
+  tnoremap <Esc> <C-\><C-n>
+endif
+" }}}
 " Handy remappings {{{
 let mapleader = "\<Space>"
 nnoremap <Leader>w :w<CR>
