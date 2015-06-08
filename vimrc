@@ -117,15 +117,15 @@ Plug 'mhinz/vim-startify'
 Plug 'junegunn/vim-after-object'
 Plug 'chrisbra/Colorizer'
 Plug 'wesQ3/vim-windowswap'
-Plug 'evanmiller/nginx-vim-syntax'
-Plug 'fatih/vim-go'
-Plug 'pangloss/vim-javascript'
-Plug 'elzr/vim-json'
-Plug 'mxw/vim-jsx'
-Plug 'tpope/vim-rails'
-Plug 'tek/vim-textobj-ruby'
-Plug 'noprompt/vim-yardoc'
-Plug 'hynek/vim-python-pep8-indent'
+Plug 'evanmiller/nginx-vim-syntax', { 'for': 'nginx' }
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'mxw/vim-jsx', { 'for': 'jsx' }
+Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby'] }
+Plug 'tek/vim-textobj-ruby', { 'for': ['ruby', 'eruby'] }
+Plug 'noprompt/vim-yardoc', { 'for': ['ruby', 'eruby'] }
+Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
 " todo: only load language-specific plugins on entering a buffer of the
 " correct filetype
 if has('python')
@@ -147,7 +147,7 @@ if executable('ag')
 endif
 
 if !empty(glob('~/.use_ycm'))
-  Plug 'Valloric/YouCompleteMe', { 'on': [] }
+  Plug 'Valloric/YouCompleteMe', { 'on': [], 'do': './install.sh' }
   augroup load_ycm
     autocmd!
     autocmd InsertEnter * call plug#load('YouCompleteMe')
