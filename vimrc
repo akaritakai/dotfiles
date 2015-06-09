@@ -51,6 +51,10 @@ set cul
 set mouse=nh
 " list: show certain characters with representations
 set list
+" show line numbers as offsets from current line number instead of absolutes
+" this really makes jumping around the file much more easy on the mind than
+" the addition/subtraction required in absolute numbering mode
+set relativenumber
 " tabs are shown as >-----, trailing spaces are shown with a special mark
 set listchars=tab:>-,trail:¶
 " use the system clipboard for vim whenever possible
