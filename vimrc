@@ -21,8 +21,9 @@ set ffs=unix,dos,mac
 set autoindent
 " Use line numbering
 set number
-" Allow using a modeline (:help modeline)
-set modeline
+" Disallow using a modeline, as they are considered a security issue.
+" Use ciaranm/securemodelines instead.
+set nomodeline
 " Don't use the Vim ruler (airline has this too)
 set noruler
 " When a bracket is inserted, briefly jump to the matching one if it can be
@@ -96,6 +97,7 @@ if empty(glob(plugpath))
 endif
 " Plugins {{{
 call plug#begin(path)
+Plug 'ciaranm/securemodelines'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-bundler'
