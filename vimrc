@@ -80,6 +80,11 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>h :nohlsearch<CR>
 inoremap jj <Esc>
 nnoremap <Leader>n :set relativenumber!<CR>
+" tmux-like bindings to split windows
+nmap <C-w>" <C-w>s
+nmap <C-w>\| <C-w>v
+nmap <C-w>% <C-w>v
+
 "}}}
 " vim-plug {{{
 if has('unix')
