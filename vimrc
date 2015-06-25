@@ -142,6 +142,7 @@ Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
 if has('python')
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
+  Plug 'sjl/gundo.vim'
 endif
 
 if executable('ctags')
@@ -188,6 +189,8 @@ let g:syntastic_check_on_wq = 0 "}}}
 " CtrlP.vim {{{
 let g:ctrlp_extensions = ['tag']
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard'] "}}}
+" gundo.vim {{{
+nnoremap <F9> :GundoToggle<CR> " }}}
 " delimitMate {{{
 let g:delimitMate_expand_cr=2
 let g:delimitMate_expand_space=1 "}}}
