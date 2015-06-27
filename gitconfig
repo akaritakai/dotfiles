@@ -17,6 +17,7 @@
 	ps = push
 	pl = pull
 	dif = diff
+	d = diff
 [push]
 	default = simple
 [pull]
