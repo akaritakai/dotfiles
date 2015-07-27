@@ -269,7 +269,7 @@ let g:surround_{char2nr('c')} = "<!-- \r -->"
 let g:surround_{char2nr('C')} = "<![CDATA[\r]]>" "}}}
 " Color schemes and other GUI things {{{
 if has("gui_running")
-  set guifont=Source_Code_Pro:h12:cANSI
+  set guifont=Input Mono 10:h12:cANSI
   set guioptions-=m
   set guioptions-=T
 else
