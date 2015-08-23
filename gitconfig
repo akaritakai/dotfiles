@@ -20,6 +20,6 @@
 	dif = diff
 	d = diff
 [push]
-	default = current
+	default = simple
 [pull]
 	rebase = true
