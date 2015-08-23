@@ -6,6 +6,7 @@
 	helper = cache --timeout 3600
 [core]
 	editor = vim
+	fscache = true
 [color]
 	ui = true
 [gist]
@@ -19,6 +20,6 @@
 	dif = diff
 	d = diff
 [push]
-	default = simple
+	default = current
 [pull]
 	rebase = true
