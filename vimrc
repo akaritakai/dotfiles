@@ -127,6 +127,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'mhinz/vim-startify'
 Plug 'junegunn/vim-after-object'
 Plug 'chrisbra/Colorizer'
+Plug 'chrisbra/csv.vim'
 Plug 'wesQ3/vim-windowswap'
 Plug 'evanmiller/nginx-vim-syntax', { 'for': 'nginx' }
 Plug 'fatih/vim-go', { 'for': 'go' }
@@ -143,6 +144,7 @@ if has('python')
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
   Plug 'sjl/gundo.vim'
+  Plug 'marijnh/tern_for_vim'
 endif
 
 if executable('ctags')
