@@ -271,7 +271,11 @@ let g:surround_{char2nr('c')} = "<!-- \r -->"
 let g:surround_{char2nr('C')} = "<![CDATA[\r]]>" "}}}
 " Color schemes and other GUI things {{{
 if has("gui_running")
-  set guifont=Hack\ 9,Hack:h10,Input\ Mono\ 10,Monospace
+  if has("win32") " Hack looks awful on Windows font rendering.
+    set guifont=InputMono:h10,Monospace
+  else
+    set guifont=Hack\ 9,Hack:h10,Input\ Mono\ 10,Monospace
+  end
   set guioptions-=m
   set guioptions-=T
 else
