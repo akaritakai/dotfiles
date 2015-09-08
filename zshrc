@@ -90,7 +90,6 @@ rand_name_for_mp3() { local name=$1; name=${name%.mp3}-$(openssl rand -hex 6).mp
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
-alias new_shell='exec $SHELL'
 
 ddg() { lynx ddg.gg; } 
 
